@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Store Project</title>
+    <style>
+        *{
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: "Nunito", sans-serif;
+        }
+  
+        body{
+          background-color: #D2C2B5;
+        }
+  
+        form{
+          width: auto;
+          height: auto;
+        }
+  
+        h1{
+          width: 350px;
+          height: 50px;
+          margin-top: 50px;
+          cursor: default;
+          padding-top: 13px;
+          border-radius: 50px;
+          background-color: #E6DBCE;
+          font-size: 22px;
+          color: #70574D;
+        }
+  
+        .form-container{
+          width: 80%;
+          height: 600px;
+          border: 1px solid #fff;
+          margin-left: 10%;
+          margin-top: 50px;
+          border-radius: 20px;
+          background-color: #fff;
+        }
+  
+        .form{
+          width: 80%;
+          height: auto;
+          margin-left: 10%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 20px;
+          border-radius: 15px;
+        }
+  
+        input{
+          width: 300px;
+          height: 40px;
+          margin-top: 15px;
+          padding-left: 15px;
+          border-radius: 40px;
+          border: 1px solid #D2C2B5;
+          background-color: #E6DBCE;
+          color: #70574D;
+          outline: 0;
+        }
+  
+        input::placeholder{
+          color: #70574D;
+        }
+      </style>
+  </head>
+  <body>
+    <div class="form-container">
+    <center>
+      <h1>Book Store Project Edit Page</h1>
+    </center>
+
+   <div class="form">
+    <form action="/updateData?id=<%=singleBook._id%>" method="post">
+        <input type="text" name="Title" value="<%=singleBook.Title%>" placeholder="Book Title : " /> <br>
+        <input type="text" name="Author" value="<%=singleBook.Author%>" placeholder="Book Author Name : " /> <br>
+        <input type="text" name="Published" value="<%=singleBook.Published%>" placeholder="Book Published Year : "/> <br>
+        <input type="text" name="Pages" value="<%=singleBook.Pages%>" placeholder="Book Pages :" /> <br>
+        <input type="text" name="Price" value="<%=singleBook.Price%>" placeholder="Book Price : " /> <br>
+        <input type="text" name="Copies" value="<%=singleBook.Copies%>" placeholder="Book Published Copies : " /> <br>
+        <input type="submit" />
+      </form>
+   </div>
+</div>
+  </body>
+</html>

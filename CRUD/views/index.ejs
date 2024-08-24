@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Store Project</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Nunito", sans-serif;
+      }
+
+      body{
+        background-color: #D2C2B5;
+      }
+
+      form{
+        width: auto;
+        height: auto;
+      }
+
+      h1{
+        width: 250px;
+        height: 50px;
+        margin-top: 50px;
+        cursor: default;
+        padding-top: 13px;
+        border-radius: 50px;
+        background-color: #E6DBCE;
+        font-size: 22px;
+        color: #70574D;
+      }
+
+      .form-container{
+        width: 80%;
+        height: 160vh;
+        border: 1px solid #fff;
+        margin-left: 10%;
+        margin-top: 50px;
+        border-radius: 20px;
+        background-color: #fff;
+      }
+
+      .card-container{
+        width: 80%;
+        height: 530px;
+        border: 1px solid #D2C2B5;
+        margin-left: 10%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 20px;
+        flex-wrap: wrap;
+        overflow: auto;
+        border-radius: 15px;
+      }    
+      
+      .card{
+        flex-basis: 45%;
+        height: 260px;
+        border-radius: 10px;
+        display: flex;
+        background-color: rgba(242,234,224 ,0.5);
+        margin-top: 20px;
+      }
+
+      .card-image{
+        width: 30%;
+      }
+
+      .card-book{
+        width: 70%;
+      }
+
+      .card-image{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .card-image img{
+        width: 70px;
+        height: 70px;
+       cursor: pointer;
+      }
+
+      .card-book h3{
+        color: #70574D;
+        padding: 15px 0 0 20px;
+        text-transform: capitalize;
+        font-size: 22px;
+      }
+
+      .card-book p{
+        padding: 12px 0 0 20px;
+        color: #EE7A79;
+      }
+
+      .card-book b{
+        color: #70574D;
+      }
+
+      .card-buttons{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        margin-top: 12px;
+      }
+
+      .card-buttons button{
+        width: 100px;
+        height: 40px;
+        cursor: pointer;
+        border-radius: 10px;
+        border: none;
+        font-size: 17px;
+        margin-left: 20px;
+      }
+
+      .delete{
+        background-color: #EF4444;
+        color: #fff;
+      }
+
+      .edit{
+        background-color: #22C55E;
+        color: #fff;
+      }
+
+      .form{
+        width: 80%;
+        height: auto;
+        border: 1px solid;
+        margin-left: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        border-radius: 15px;
+        border: 1px solid #D2C2B5;
+      }
+
+      input{
+        width: 300px;
+        height: 40px;
+        margin-top: 15px;
+        padding-left: 15px;
+        border-radius: 40px;
+        border: 1px solid #D2C2B5;
+        background-color: #E6DBCE;
+        color: #70574D;
+        outline: 0;
+      }
+
+      input::placeholder{
+        color: #70574D;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <center>
+        <h1>Book Store Project</h1>
+      </center>
+  
+     <div class="form">
+      <form action="/insert" method="post">
+          <input type="text" name="Title" placeholder="Book Title : " required/> <br>
+          <input type="text" name="Author" placeholder="Book Author Name : " required/> <br>
+          <input type="text" name="Published" placeholder="Book Published Year : "required/> <br>
+          <input type="text" name="Pages" placeholder="Book Pages :" required/> <br>
+          <input type="text" name="Price" placeholder="Book Price : " required/> <br>
+          <input type="text" name="Copies" placeholder="Book Published Copies : " required/> <br>
+          <input type="submit" /><br> <br>
+        </form>
+    </div>
+    <div class="card-container">
+      <% BookData.map((e, i) => { %>
+        <div class="card">
+          <div class="card-image">
+            <img src="https://cdn-icons-png.flaticon.com/512/14262/14262647.png" alt="Book Icon" />
+          </div>
+          <div class="card-book">
+          <h3><%= e.Title %></h3>
+          <p><b>Author : </b> <%= e.Author %></p>
+          <p><b>Published Year : </b> <%= e.Published %></p>
+          <p><b>Pages : </b> <%= e.Pages %></p>
+          <p><b>Price : </b> <%= e.Price %> ₹</p>
+          <p><b>Published Copies : </b> <%= e.Copies %></p>
+          <div class="card-buttons">
+            <a href="/editData?id=<%= e.id %>" style="text-decoration: none;">
+              <button class="edit">Edit</button>
+            </a>
+            <a href="/deleteData?id=<%= e.id %>" style="text-decoration: none;">
+              <button class="delete">Delete</button>
+            </a>
+          </div>
+        </div>
+        </div>
+      <% }) %>
+    </div>
+   </div>
+  </body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Application</title>
+    <style>
+        /* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    gap: 10px;
+}
+
+form input[type="text"],
+form input[type="file"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+form input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table thead {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+table thead th {
+    padding: 12px;
+    text-align: left;
+    font-size: 16px;
+}
+
+table tbody tr {
+    background-color: #ffffff;
+    border-bottom: 1px solid #dddddd;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tbody td {
+    padding: 12px;
+    text-align: left;
+    font-size: 14px;
+}
+
+table tbody td img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.delete-button,
+.edit-button {
+    background-color: #ff4c4c;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 14px;
+}
+
+.edit-button {
+    background-color: #4CAF50;
+}
+
+.delete-button:hover {
+    background-color: #e64545;
+}
+
+.edit-button:hover {
+    background-color: #45a049;
+}
+
+a {
+    text-decoration: none;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CRUD Application</h1>
+        <form action="/insert" method="post" enctype="multipart/form-data">
+            <input type="text" name="name" placeholder="Enter name">
+            <input type="text" name="subject" placeholder="Enter subject">
+            <input type="file" name="image">
+            <input type="submit" value="Add">
+        </form>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Subject</th>
+                    <th>Image</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% data.map((el,i)=>{  %>
+                    <tr>
+                        <td><%=el.name%></td>
+                        <td><%=el.subject%></td>
+                        <td><img src="<%=el.image%>" alt=""></td>
+                        <td class="action-buttons">
+                            <a href="/deleteData?id=<%=el.id%>">
+                                <button class="delete-button">Delete</button>
+                            </a>
+                            <a href="/editData?id=<%=el.id%>">
+                                <button class="edit-button">Edit</button>
+                            </a>
+                        </td>
+                    </tr>
+                <% })%>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

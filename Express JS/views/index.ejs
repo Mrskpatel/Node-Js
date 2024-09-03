@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log in Page</title>
+<style>
+    /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px 40px;
+    max-width: 400px;
+    width: 100%;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="password"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f8f8f8;
+    font-weight: bold;
+    color: #555;
+}
+
+td {
+    color: #333;
+}
+
+button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #f0f0f0;
+}
+
+/* Links inside table */
+a {
+    text-decoration: none;
+}
+
+a button {
+    background-color: #f44336;
+    color: white;
+}
+
+a button:hover {
+    background-color: #d32f2f;
+}
+
+</style>
+</head>
+<body>
+    <div class="container">
+        <form action="/insert" method="post">
+            <h1>Login Page</h1>
+            <input type="text" name="username" id="username" placeholder="Enter Your Name" required />
+            <input type="password" name="password" id="password" placeholder="Enter Your Password" required />
+            <input type="submit" />
+        </form>
+        <table>
+            <tr>
+                <th>Username</th>
+                <th>Password</th>
+                <th>Action</th>
+            </tr>
+            <% data.map((e, i) => { %>
+            <tr>
+                <td><%= e.username %></td>
+                <td><%= e.password %></td>
+                <td>
+                    <a href="/deleteData?id=<%= e.id %>">
+                        <Button>Delete</Button>
+                    </a>
+                    <a href="/editData?id=<%= e.id %>">
+                        <button>Edit</button>
+                    </a>
+                </td>
+            </tr>
+            <% }) %>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Add Page</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      header {
+        width: 100%;
+        height: 80px;
+        /* border: 1px solid; */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #fff;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        position: fixed;
+      }
+
+      .Logo {
+        flex-basis: 10%;
+        height: 80px;
+        /* border: 1px solid; */
+        font-family: "Pacifico", cursive;
+        margin-left: 50px;
+      }
+
+      .Logo h1 {
+        color: #ef9912;
+        text-align: center;
+        cursor: pointer;
+        /* margin-top: -5px; */
+      }
+
+      .Logo p {
+        font-family: "Playwrite CU", cursive;
+        font-size: 10px;
+        text-align: center;
+        color: #000;
+        margin-top: -10px;
+      }
+
+      nav {
+        flex-basis: 40%;
+        height: 80px;
+        /* border: 1px solid; */
+      }
+
+      nav ul {
+        height: 80px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+
+      nav ul li {
+        list-style: none;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        font-family: "Rubik", sans-serif;
+        color: #000;
+        transition: 0.5s;
+      }
+
+      nav ul li a:hover {
+        opacity: 0.6;
+        transition: 0.5s;
+      }
+
+      .Header-button {
+        width: 15%;
+        height: 80px;
+        /* border: 1px solid; */
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+
+      .Header-button button {
+        width: 150px;
+        height: 50px;
+        background-color: #ef9912;
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+        font-size: 17px;
+        transition: 0.5s;
+        cursor: pointer;
+      }
+
+      .Header-button button:hover {
+        opacity: 0.7;
+        transition: 0.5s;
+        letter-spacing: 5px;
+      }
+
+      .main-form{
+        width: 100%;
+        height: 650px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 15px;
+      }
+
+      .form {
+        width: 30%;
+        height: 650px;
+        border: 1px solid;
+        border-radius: 10px;
+        font-family: "Rubik", sans-serif;
+      }
+
+      .form h1{
+        padding: 30px 0 0 30px;
+      }
+
+      .form input{
+        width: 85%;
+        height: 40px;
+        padding-left: 15px;
+        margin: 15px 0 0 30px; 
+        border-radius: 9px;
+        border: 1px solid #B3B3B3;
+        outline: 0;
+      }
+
+      input[type=file]{
+        padding-top: 8px;
+      }
+
+      .button{
+        width: 85%;
+        height: 40px;
+        margin: 15px 0 0 30px; 
+        border-radius: 10px;
+        border: none;
+        background-color: #ef9912;
+        color: #fff;
+        font-size: 17px;
+      }
+
+      .dimension{
+        width: 85%;
+        height: 50px;
+        border: 1px solid;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        margin: 15px 0 0 30px; 
+      }
+
+      .dimension button{
+        width: 50px;
+        height: 40px;
+        margin-left:10px;
+        margin-top: 0;
+        cursor: pointer;
+        background-color: #ecf0f1;
+        color: #000;
+        border: none;
+        border-radius: 8px;
+      }
+    </style>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&display=swap" rel="stylesheet"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet"/>
+    <!-- Google Fonts -->
+
+    <!-- Remix Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css" integrity="sha512-OQDNdI5rpnZ0BRhhJc+btbbtnxaj+LdQFeh0V9/igiEPDiWE2fG+ZsXl0JEH+bjXKPJ3zcXqNyP4/F/NegVdZg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Remix Icon -->
+  </head>
+  <body>
+
+    <header>
+        <div class="Logo">
+          <a href="/" style="text-decoration: none;"><h1>Cinema <p>Movie Booking</p></h1> </a>
+        </div>
+        <nav>
+          <ul>
+            <li>
+                <a href=""><i class="ri-movie-2-line" style="margin-right: 5px;"></i> Movie</a>
+            </li>
+            <li>
+                <a href=""><i class="ri-movie-line" style="margin-right: 5px;"></i> Stream</a>
+            </li>
+            <li>
+                <a href=""><i class="ri-medal-line" style="margin-right: 5px;"></i> Event</a>
+            </li>
+            <li>
+                <a href=""><i class="ri-map-pin-line" style="margin-right: 5px;"></i> Plays</a>
+            </li>
+            <li>
+                <a href=""><i class="ri-basketball-line" style="margin-right: 5px;"></i> Sports</a>
+            </li>
+            <li>
+                <a href=""><i class="ri-brain-line" style="margin-right: 5px;"></i> Activities</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="Header-button">
+          <a href="/">
+              <button class="btn"><i class="ri-arrow-left-line"></i> Back</button>
+          </a>
+        </div>
+      </header> <br><br><br><br>
+
+      <section>
+       <div class="main-form">
+        <div class="form">
+            <h1>Add Movie Product</h1> <br>
+            <form action="/insertMovie" method="post" enctype="multipart/form-data">
+              <input type="text" name="title" placeholder="Enter Movie Title ">
+              <input type="text" name="language" placeholder="Enter Movie Language ">
+              <input type="text" name="genres" placeholder="Enter Movie Genres ">
+              <input type="text" name="director" placeholder="Enter Movie Director Name ">
+              <input type="text" name="writers" placeholder="Enter Movie Writers Name ">
+              <input type="text" name="country" placeholder="Enter Movie Country of origin ">
+              <input type="date" name="date" >
+              <input type="file" name="image">
+              <input type="submit" value="Add Movie" class="button">
+            </form>
+       </div>
+       </div>
+      </section>
+
+  </body>
+</html>

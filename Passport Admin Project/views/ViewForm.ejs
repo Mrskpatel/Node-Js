@@ -103,7 +103,7 @@
 
             <div class="container-xxl flex-grow-1 container-p-y">
               <h4 class="fw-bold py-3 mb-4">
-                <span class="text-muted fw-light">Table /</span> Admin List
+                <span class="text-muted fw-light"></span> Admin List
               </h4>
 
               <!-- Striped Rows -->
@@ -118,7 +118,7 @@
                         <th>Company</th>
                         <th>Email</th>
                         <th>Password</th>
-                        <th>Phone numbers</th>
+                        <th>Phone</th>
                         <th>massage</th>
                         <th>Actions</th>
                       </tr>
@@ -134,13 +134,11 @@
                           <td><%=el.phone%></td>
                           <td><%=el.massage%></td>
                           <td>
-                            <a href="/editdata?id=<%=el.id%>">
-                            Edit
+                            <a href="/editdata?id=<%=el.id%>" >
+                            <button style="width: 80px; height: 40px; background-color: #E7E7FF; color: #696CFF; border: none; border-radius: 8px;">Edit</button>
                           </a>
-                        </td>
-                          <td>
                             <a href="/deletedata?id=<%=el.id%>">
-                              Delete
+                              <button style="width: 80px; height: 40px; background-color: #E7E7FF; color: #696CFF; border: none; border-radius: 8px;">Delete</button>
                             </a>
                           </td>
                         </tr>

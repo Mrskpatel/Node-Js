@@ -68,7 +68,7 @@
 
     <ul class="menu-inner py-1">
       <!-- Dashboard -->
-      <li class="menu-item active">
+      <li class="menu-item">
         <a href="/dashboard" class="menu-link">
           <i class="menu-icon tf-icons bx bx-home-circle"></i>
           <div data-i18n="Analytics">Dashboard</div>
@@ -104,7 +104,25 @@
         </ul>
       </li>
 
-      <li class="menu-header small text-uppercase">
+      <!-- Forms & Tables -->
+      <li class="menu-header small text-uppercase"><span class="menu-header-text">Admin Pages</span></li>
+      <!-- Forms -->
+      
+      <li class="menu-item">
+        <a href="/AddForm" class="menu-link">
+            <i class="menu-icon tf-icons bx bx-detail"></i>
+          <div data-i18n="Tables">Admin Form</div>
+        </a>
+      </li>
+      
+      <li class="menu-item">
+        <a href="/ViewForm" class="menu-link">
+          <i class="menu-icon tf-icons bx bx-table"></i>
+          <div data-i18n="Tables">Show Admin</div>
+        </a>
+      </li>
+
+      <!-- <li class="menu-header small text-uppercase">
         <span class="menu-header-text">Authentications Pages</span>
       </li>
       
@@ -119,31 +137,82 @@
               <div data-i18n="Basic">Login</div>
             </a>
           </li>
+        </ul>
+        <ul class="menu-sub">
           <li class="menu-item">
-            <a href="auth-register-basic.html" class="menu-link" target="_blank">
-              <div data-i18n="Basic">Register</div>
+            <a href="/logout" class="menu-link">
+              <div data-i18n="Basic">Logout</div>
+            </a>
+          </li>
+        </ul>
+      </li> -->
+
+      <!-- Category Pages -->
+      <li class="menu-header small text-uppercase"><span class="menu-header-text">Category Pages</span></li>
+      <!-- Category Pages -->     
+      <li class="menu-item">
+        <a href="javascript:void(0);" class="menu-link menu-toggle">
+          <i class="menu-icon tf-icons  bx bx-plus"></i>
+          <div data-i18n="Category">Category</div>
+        </a>
+        <ul class="menu-sub">
+          <li class="menu-item">
+            <a href="/Category/addCategory" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-plus"></i>
+              <div data-i18n="Tables">Add Category</div>
+            </a>
+          </li>
+        </ul>
+        <ul class="menu-sub">
+          <li class="menu-item">
+            <a href="/Category/viewCategory" class="menu-link">
+              <i class="menu-icon tf-icons bx bx-table"></i>
+              <div data-i18n="Tables">View Category</div>
             </a>
           </li>
         </ul>
       </li>
 
-      <!-- Forms & Tables -->
-      <li class="menu-header small text-uppercase"><span class="menu-header-text">Admin Pages</span></li>
-      <!-- Forms -->
-      
       <li class="menu-item">
-        <a href="/AddForm" class="menu-link">
+        <a href="javascript:void(0);" class="menu-link menu-toggle">
+          <i class="menu-icon tf-icons  bx bx-plus"></i>
+          <div data-i18n="Category">Sub Category</div>
+        </a>
+        <ul class="menu-sub">
+          <li class="menu-item">
+            <a href="/subCategory/addSubCategory" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-plus"></i>
+              <div data-i18n="Tables">Add Sub Category</div>
+            </a>
+          </li>
+        </ul>
+        <ul class="menu-sub">
+          <li class="menu-item">
+            <a href="/subCategory/viewSubCategory" class="menu-link">
+              <i class="menu-icon tf-icons bx bx-table"></i>
+              <div data-i18n="Tables">View Sub Category</div>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+       <!-- Product Page -->
+       <li class="menu-header small text-uppercase"><span class="menu-header-text">Product Pages</span></li>
+       <!-- Product Page -->
+
+       <li class="menu-item">
+        <a href="/Product/addProduct" class="menu-link">
             <i class="menu-icon tf-icons bx bx-detail"></i>
-          <div data-i18n="Tables">Admin Form</div>
+          <div data-i18n="Tables">Add Product</div>
         </a>
       </li>
       
-      <!-- Tables -->
       <li class="menu-item">
-        <a href="/ViewForm" class="menu-link">
+        <a href="/Product/viewProduct" class="menu-link">
           <i class="menu-icon tf-icons bx bx-table"></i>
-          <div data-i18n="Tables">Show Admin</div>
+          <div data-i18n="Tables">Show Product</div>
         </a>
       </li>
+
     </ul>
   </aside>

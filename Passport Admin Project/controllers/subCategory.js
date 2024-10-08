@@ -8,7 +8,6 @@ module.exports.addSubCategory = async (req, res) => {
     res.render("addSubCategory", { data: categories });
   } catch (err) {
     console.log(err);
-    res.status(500).send("Internal Server Error");
   }
 };
 
@@ -25,5 +24,3 @@ module.exports.viewSubCategory = async (req , res) => {
     console.log(err);
   }
 }
-
-

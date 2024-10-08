@@ -18,7 +18,6 @@ module.exports.insserCategory = async (req, res) => {
     res.redirect("viewCategory");
   } catch (err) {
     console.log(err);
-    res.status(500).send("Internal Server Error");
   }
 };
 
@@ -44,7 +43,6 @@ const data = await UserCategory.findByIdAndDelete(req.query.id);
     data ? res.redirect("back") : console.log("Can't delete data");
   } catch (err) {
     console.log(err);
-    res.status(500).send("Internal Server Error");
   }
 };
 
@@ -54,7 +52,6 @@ module.exports.editCategory = async (req, res) => {
     res.render("editCategory", { editCategory: editdata });
   } catch (err) {
     console.log(err);
-    res.status(500).send("Internal Server Error");
   }
 };
 

@@ -7,7 +7,7 @@ const transport = nodemailer.createTransport({
         pass : "xkuebgabfzobozrx"
     }
 })
-
+    
 module.exports.sendOtp = (to , otp) => {
     let mailOption ={
         from : "kasundrasarthi72@gmail.com",
